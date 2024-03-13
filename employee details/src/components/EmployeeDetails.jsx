@@ -1,7 +1,11 @@
 import { employeeHeader } from "../utils/constant";
 import useEmployeeDetails from "../hooks/useEmployeeDetails";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteEmployee } from "../utils/slices/employeeSlice";
+import {
+  addFilteredEmployee,
+  deleteEmployee,
+} from "../utils/slices/employeeSlice";
+import { toggleShowForm, toggleUpdateForm } from "../utils/slices/appSlice";
 
 const EmployeeDetails = () => {
   const dispatch = useDispatch();
@@ -10,9 +14,23 @@ const EmployeeDetails = () => {
     (store) => store.employee.employeeDetails
   );
 
-  const handleDelete = (id) => {
-    console.log('Deleted');
+  const handleDelete = async (id) => {
     dispatch(deleteEmployee(id));
+    await fetch("http://localhost:8081/delete", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
+  const handleUpdate = (id) => {
+    dispatch(addFilteredEmployee(id));
+    dispatch(toggleUpdateForm());
+    dispatch(toggleShowForm());
   };
 
   if (!employeeDetails) return <p>Loading.....</p>;
@@ -34,7 +52,7 @@ const EmployeeDetails = () => {
           {employeeDetails.map((item) => (
             <tr
               key={item.employeeId}
-              className="text-md border border-slate-400"
+              className="text-md border border-slate-400 text-center"
             >
               <td className="px-2 py-2">{item.employeeId}</td>
               <td className="px-2 py-2">{item.firstName}</td>
@@ -49,15 +67,18 @@ const EmployeeDetails = () => {
               <td className="px-2 py-2">{item.contactNumber}</td>
               <td className="px-2 py-2">{item.department}</td>
               <td className="px-2 py-2">{item.position}</td>
-              <td className="flex items-center justify-evenly mt-[6px]">
-                <span title="Edit">
-                  <i className="fa-solid fa-pencil cursor-pointer hover:text-slate-400" />
+              <td className="">
+                <span
+                  onClick={() => handleUpdate(item.employeeId)}
+                  title="UPDATE"
+                >
+                  <i className="fa-solid fa-pencil cursor-pointer hover:text-slate-400 px-2 mr-1" />
                 </span>
                 <span
                   onClick={() => handleDelete(item.employeeId)}
-                  title="Delete"
+                  title="DELETE"
                 >
-                  <i className="fa-solid fa-trash cursor-pointer hover:text-slate-400" />
+                  <i className="fa-solid fa-trash cursor-pointer text-red-400 hover:text-red-300 px-2" />
                 </span>
               </td>
             </tr>

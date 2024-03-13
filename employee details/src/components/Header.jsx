@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
-import { toggleShowForm } from "../utils/slices/appSlice";
+import { displayForm, toggleShowForm } from "../utils/slices/appSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const handleAddEmployee = () => {
+    dispatch(displayForm());
     dispatch(toggleShowForm());
   };
   return (
