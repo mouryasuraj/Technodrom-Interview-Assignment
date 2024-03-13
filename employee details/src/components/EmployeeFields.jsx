@@ -1,7 +1,6 @@
-
 import useEmployeeFields from "../hooks/useEmployeeFilelds";
 import NewEmployeeForm from "./NewEmployeeForm";
-import UpdateEmployeeDetails from "./UpdateEmployeeDetails";
+import UpdateForm from "./UpdateForm";
 
 const EmployeeFields = () => {
   const { showForm, updateForm, handleCloseForm } = useEmployeeFields();
@@ -17,7 +16,7 @@ const EmployeeFields = () => {
           onClick={handleCloseForm}
           className="fa-solid fa-xmark absolute top-[-45px] right-[-45px] px-[15px] text-xl py-2 hover:bg-red-500 transition-all duration-200 rounded-full text-slate-100 cursor-pointer *:"
         />
-        {updateForm ? <UpdateEmployeeDetails /> : <NewEmployeeForm />}
+        {updateForm ? <UpdateForm /> : <NewEmployeeForm />}
       </div>
     </div>
   );

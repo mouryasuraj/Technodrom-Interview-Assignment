@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleShowForm } from "../utils/slices/appSlice";
 
 const useUpdateEmployeeDetails = (updateGender) => {
+    const dispatch = useDispatch()
 
     const filteredEmployee = useSelector(
         (store) => store.employee.filteredEmployee
@@ -19,6 +21,7 @@ const useUpdateEmployeeDetails = (updateGender) => {
         contactNumber,
         department,
         position,
+        gender
     } = filteredEmployee[0];
     const [employeeData, setEmployeeData] = useState({
         employeeId: employeeId,
@@ -48,7 +51,9 @@ const useUpdateEmployeeDetails = (updateGender) => {
         })
             .then((res) => {
                 console.log("Data Updated Successfully " + res);
-                alert("log")
+                window.location.reload()
+                e.target.reset()
+                dispatch(toggleShowForm())
             })
             .catch((err) => console.log(err));
     };
@@ -61,6 +66,6 @@ const useUpdateEmployeeDetails = (updateGender) => {
     };
 
 
-    return { employeeData, filteredEmployee, handleChange, handleSubmit }
+    return { gender, employeeData, handleChange, handleSubmit }
 }
 export default useUpdateEmployeeDetails

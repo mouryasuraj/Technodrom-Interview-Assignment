@@ -6,7 +6,7 @@ const NewEmployeeForm = () => {
   const { handleSubmit, handleOnchange } = useEmployeeFields(gender);
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
       <label className="font-semibold text-lg" htmlFor="employeeID">
         Fill Employee details
       </label>

@@ -1,13 +1,13 @@
 
 //Employee Header Details
 export const employeeHeader = [
-    "Employee Id",
+    "Id",
     "First Name",
     "Last Name",
     "Date of Birth",
     "Gender",
     "Nationality",
-    "Address Street",
+    "Address",
     "City",
     "State",
     "Postal Code",

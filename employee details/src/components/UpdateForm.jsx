@@ -1,12 +1,17 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import useUpdateEmployeeDetails from "../hooks/useUpdateEmployeeDetails";
 
-const UpdateEmployeeDetails = () => {
-  const updateGender = useRef();
-  const { employeeData, filteredEmployee, handleChange, handleSubmit } =
+const UpdateForm = () => {
+  
+
+
+const updateGender = useRef();
+  const { gender, employeeData, handleChange, handleSubmit } =
     useUpdateEmployeeDetails(updateGender);
 
-  if (!filteredEmployee) return null;
+  useEffect(() => {
+    updateGender.current.value = gender;
+  }, [gender]);
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
@@ -115,7 +120,7 @@ const UpdateEmployeeDetails = () => {
         <div className="flex gap-2">
           <input
             className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
-            type="number"
+            type="text"
             name="contactNumber"
             placeholder="Contact Number"
             required
@@ -150,4 +155,4 @@ const UpdateEmployeeDetails = () => {
   );
 };
 
-export default UpdateEmployeeDetails;
+export default UpdateForm;

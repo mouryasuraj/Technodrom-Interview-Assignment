@@ -36,12 +36,12 @@ const EmployeeDetails = () => {
   if (!employeeDetails) return <p>Loading.....</p>;
   return (
     <div className="py-12 px-5">
-      <table>
+      <table className="w-full">
         <thead className="bg-slate-500 border border-slate-400">
           <tr>
             {employeeHeader.map((item) => {
               return (
-                <th key={item} className="px-2 py-2">
+                <th key={item} className="px-2 py-2 text-slate-200">
                   {item}
                 </th>
               );
@@ -52,22 +52,48 @@ const EmployeeDetails = () => {
           {employeeDetails.map((item) => (
             <tr
               key={item.employeeId}
-              className="text-md border border-slate-400 text-center"
+              className="text-md border border-slate-400 text-center even:bg-slate-900"
             >
-              <td className="px-2 py-2">{item.employeeId}</td>
-              <td className="px-2 py-2">{item.firstName}</td>
-              <td className="px-2 py-2">{item.lastName}</td>
-              <td className="px-2 py-2">{item.dateOfBirth}</td>
-              <td className="px-2 py-2">{item.gender}</td>
-              <td className="px-2 py-2">{item.nationality}</td>
-              <td className="px-2 py-2">{item.addressStreet}</td>
-              <td className="px-2 py-2">{item.addressCity}</td>
-              <td className="px-2 py-2">{item.addressState}</td>
-              <td className="px-2 py-2">{item.addressPostalCode}</td>
-              <td className="px-2 py-2">{item.contactNumber}</td>
-              <td className="px-2 py-2">{item.department}</td>
-              <td className="px-2 py-2">{item.position}</td>
-              <td className="">
+              <td className="px-2 py-2 border border-slate-600">
+                {item.employeeId}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.firstName}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.lastName}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.dateOfBirth}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.gender}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.nationality}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.addressStreet}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.addressCity}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.addressState}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.addressPostalCode}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.contactNumber}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.department}
+              </td>
+              <td className="px-2 py-2 border border-slate-600">
+                {item.position}
+              </td>
+              <td className="border border-slate-600">
                 <span
                   onClick={() => handleUpdate(item.employeeId)}
                   title="UPDATE"

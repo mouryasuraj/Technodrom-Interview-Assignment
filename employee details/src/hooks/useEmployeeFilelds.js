@@ -9,8 +9,12 @@ const useEmployeeFields = (gender) => {
     const showForm = useSelector((store) => store.app.showForm);
     const updateForm = useSelector((store) => store.app.updateForm);
 
+
     const handleCloseForm = () => {
         dispatch(toggleShowForm());
+        if (updateForm) {
+            window.location.reload()
+        }
     };
 
     const handleSubmit = (e) => {
@@ -26,6 +30,7 @@ const useEmployeeFields = (gender) => {
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
         handleCloseForm();
+        e.target.reset()
     };
 
     const handleOnchange = (e) => {
