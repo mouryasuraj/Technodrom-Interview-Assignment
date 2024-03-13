@@ -30,9 +30,8 @@ app.get('/employee', (req, res) => {
 
 // Add the data to the database
 app.post('/newEmployee', (req, res) => {
-    const sql = "INSERT INTO employee (`employeeId`, `firstName`, `lastName`, `dateOfBirth`, `gender`, `nationality`,`addressStreet` , `addressCity`, `addressState`, `addressPostalCode`, `contactNumber`,`department`,`position`) VALUES (?)"
+    const sql = "INSERT INTO employee (`firstName`, `lastName`, `dateOfBirth`, `gender`, `nationality`,`addressStreet` , `addressCity`, `addressState`, `addressPostalCode`, `contactNumber`,`department`,`position`) VALUES (?)"
     const values = [
-        Number(req.body.employeeId),
         req.body.firstName,
         req.body.lastName,
         req.body.dateOfBirth,

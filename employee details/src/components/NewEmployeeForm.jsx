@@ -11,14 +11,6 @@ const NewEmployeeForm = () => {
         Fill Employee details
       </label>
       <div className="flex flex-col gap-4">
-        <input
-          className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
-          type="number"
-          name="employeeId"
-          placeholder="Employee ID"
-          required
-          onChange={handleOnchange}
-        />
         <div className="flex gap-2">
           <input
             className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"

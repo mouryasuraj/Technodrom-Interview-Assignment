@@ -19,7 +19,6 @@ const useEmployeeFields = (gender) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addNewEmployee({ ...employee, ["gender"]: gender.current.value }));
         fetch("http://localhost:8081/newEmployee", {
             method: "POST",
             headers: {
@@ -29,8 +28,10 @@ const useEmployeeFields = (gender) => {
         })
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
+        dispatch(addNewEmployee({ ...employee, ["gender"]: gender.current.value }));
         handleCloseForm();
         e.target.reset()
+        window.location.reload()
     };
 
     const handleOnchange = (e) => {
