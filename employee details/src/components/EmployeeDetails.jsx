@@ -54,45 +54,14 @@ const EmployeeDetails = () => {
               key={item.employeeId}
               className="text-md border border-slate-400 text-center even:bg-slate-900"
             >
-              <td className="px-2 py-2 border border-slate-600">
-                {item.employeeId}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.firstName}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.lastName}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.dateOfBirth}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.gender}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.nationality}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.addressStreet}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.addressCity}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.addressState}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.addressPostalCode}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.contactNumber}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.department}
-              </td>
-              <td className="px-2 py-2 border border-slate-600">
-                {item.position}
-              </td>
+              {Object.keys(item).map((key) => (
+                <td
+                  key={item[key]}
+                  className="px-2 py-2 border border-slate-600"
+                >
+                  {item[key]}
+                </td>
+              ))}
               <td className="border border-slate-600">
                 <span
                   onClick={() => handleUpdate(item.employeeId)}

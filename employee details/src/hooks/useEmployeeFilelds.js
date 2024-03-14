@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleShowForm } from "../utils/slices/appSlice";
 import { useState } from "react";
-import { addNewEmployee } from "../utils/slices/employeeSlice";
 
 const useEmployeeFields = (gender) => {
     const [employee, setEmployee] = useState([]);
@@ -28,7 +27,6 @@ const useEmployeeFields = (gender) => {
         })
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
-        dispatch(addNewEmployee({ ...employee, ["gender"]: gender.current.value }));
         handleCloseForm();
         e.target.reset()
         window.location.reload()

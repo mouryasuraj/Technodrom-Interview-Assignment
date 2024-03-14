@@ -13,7 +13,7 @@ const NewEmployeeForm = () => {
       <div className="flex flex-col gap-4">
         <div className="flex gap-2">
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="text"
             name="firstName"
             placeholder="First Name"
@@ -21,7 +21,7 @@ const NewEmployeeForm = () => {
             onChange={handleOnchange}
           />
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="text"
             name="lastName"
             placeholder="Last Name"
@@ -31,14 +31,14 @@ const NewEmployeeForm = () => {
         </div>
         <div className="flex gap-2">
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             name="dateOfBirth"
             type="date"
             required
             onChange={handleOnchange}
           />
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="text"
             name="nationality"
             placeholder="Nationality"
@@ -55,7 +55,7 @@ const NewEmployeeForm = () => {
         </div>
         <div className="flex gap-2">
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="text"
             name="addressStreet"
             placeholder="Street"
@@ -63,7 +63,7 @@ const NewEmployeeForm = () => {
             onChange={handleOnchange}
           />
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="text"
             name="addressCity"
             placeholder="City"
@@ -73,7 +73,7 @@ const NewEmployeeForm = () => {
         </div>
         <div className="flex gap-2">
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="text"
             name="addressState"
             placeholder="State"
@@ -81,7 +81,7 @@ const NewEmployeeForm = () => {
             onChange={handleOnchange}
           />
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="text"
             name="addressPostalCode"
             placeholder="Postal Code"
@@ -91,7 +91,7 @@ const NewEmployeeForm = () => {
         </div>
         <div className="flex gap-2">
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="number"
             name="contactNumber"
             placeholder="Contact Number"
@@ -99,7 +99,7 @@ const NewEmployeeForm = () => {
             onChange={handleOnchange}
           />
           <input
-            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+            className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
             type="text"
             name="department"
             placeholder="Department"
@@ -108,7 +108,7 @@ const NewEmployeeForm = () => {
           />
         </div>
         <input
-          className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
+          className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm focus:border-slate-600 focus:border-[3px]"
           type="text"
           name="position"
           placeholder="Position"
