@@ -6,7 +6,7 @@ const useEmployeeDetails = () => {
     const dispatch = useDispatch()
     const fetchEmployeeDetails = async () => {
         try {
-            const data = await fetch("http://localhost:8081/employee");
+            const data = await fetch(`${import.meta.env.VITE_BACKEND_URL}/employee`);
             const json = await data.json();
             dispatch(addEmployeeDetails(json))
         } catch (error) {

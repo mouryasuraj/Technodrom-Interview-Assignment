@@ -40,7 +40,7 @@ const useUpdateEmployeeDetails = (updateGender) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await fetch("http://localhost:8081/update", {
+        await fetch(`${import.meta.env.VITE_BACKEND_URL}/update`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

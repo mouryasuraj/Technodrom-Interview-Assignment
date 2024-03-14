@@ -18,7 +18,7 @@ const useEmployeeFields = (gender) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:8081/newEmployee", {
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/newEmployee`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

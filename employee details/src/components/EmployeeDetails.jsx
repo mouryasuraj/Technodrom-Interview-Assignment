@@ -16,7 +16,7 @@ const EmployeeDetails = () => {
 
   const handleDelete = async (id) => {
     dispatch(deleteEmployee(id));
-    await fetch("http://localhost:8081/delete", {
+    await fetch(`${import.meta.env.VITE_BACKEND_URL}/delete`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
