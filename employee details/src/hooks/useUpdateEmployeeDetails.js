@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleShowForm } from "../utils/slices/appSlice";
+import { BACKEND_URL } from "../utils/constant";
 
 const useUpdateEmployeeDetails = (updateGender) => {
     const dispatch = useDispatch()
@@ -40,7 +41,7 @@ const useUpdateEmployeeDetails = (updateGender) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await fetch(`${import.meta.env.VITE_BACKEND_URL}/update`, {
+        await fetch(`${BACKEND_URL}/update`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

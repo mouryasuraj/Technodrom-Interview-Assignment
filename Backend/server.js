@@ -87,5 +87,5 @@ app.delete('/delete', (req, res) => {
 })
 
 app.listen(process.env.MYSQLPORT, () => {
-    console.log(`Listening on post number ${process.env.MYSQLPORT}`);
+    console.log(`Listening on port number ${process.env.MYSQLPORT}`);
 })

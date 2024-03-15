@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleShowForm } from "../utils/slices/appSlice";
 import { useState } from "react";
+import { BACKEND_URL } from "../utils/constant";
 
 const useEmployeeFields = (gender) => {
     const [employee, setEmployee] = useState([]);
@@ -18,7 +19,7 @@ const useEmployeeFields = (gender) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`${import.meta.env.VITE_BACKEND_URL}/newEmployee`, {
+        fetch(`${BACKEND_URL}/newEmployee`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

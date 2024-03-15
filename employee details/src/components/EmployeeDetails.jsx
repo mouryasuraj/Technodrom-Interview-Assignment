@@ -1,4 +1,4 @@
-import { employeeHeader } from "../utils/constant";
+import { BACKEND_URL, employeeHeader } from "../utils/constant";
 import useEmployeeDetails from "../hooks/useEmployeeDetails";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -16,7 +16,7 @@ const EmployeeDetails = () => {
 
   const handleDelete = async (id) => {
     dispatch(deleteEmployee(id));
-    await fetch(`${import.meta.env.VITE_BACKEND_URL}/delete`, {
+    await fetch(`${BACKEND_URL}/delete`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

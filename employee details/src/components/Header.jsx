@@ -14,7 +14,7 @@ const Header = () => {
       </h1>
       <button
         onClick={handleAddEmployee}
-        className="bg-slate-500 hover:bg-slate-600 transition-all duration-200 px-4 py-2 text-xl rounded-lg cursor-pointer"
+        className="bg-green-600 hover:bg-green-700 transition-all duration-200 px-4 py-2 text-xl rounded-lg cursor-pointer"
       >
         <i className="fa-solid fa-plus" /> Add New Employee
       </button>

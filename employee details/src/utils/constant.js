@@ -16,3 +16,7 @@ export const employeeHeader = [
     "Position",
     "Actions"
 ]
+
+
+// Backend URL
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL

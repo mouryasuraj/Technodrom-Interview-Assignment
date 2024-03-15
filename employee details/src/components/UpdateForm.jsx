@@ -2,10 +2,8 @@ import { useEffect, useRef } from "react";
 import useUpdateEmployeeDetails from "../hooks/useUpdateEmployeeDetails";
 
 const UpdateForm = () => {
-  
+  const updateGender = useRef();
 
-
-const updateGender = useRef();
   const { gender, employeeData, handleChange, handleSubmit } =
     useUpdateEmployeeDetails(updateGender);
 
