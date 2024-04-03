@@ -19,5 +19,6 @@ const useEmployeeDetails = () => {
         fetchEmployeeDetails();
     }, []);
     /*eslint-enable */
+    return { fetchEmployeeDetails }
 }
 export default useEmployeeDetails

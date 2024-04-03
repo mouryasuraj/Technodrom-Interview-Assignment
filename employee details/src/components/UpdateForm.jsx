@@ -25,7 +25,7 @@ const UpdateForm = () => {
             placeholder="First Name"
             required
             onChange={handleChange}
-            value={employeeData.firstName}
+            value={employeeData && employeeData.firstName}
           />
           <input
             className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
@@ -34,7 +34,7 @@ const UpdateForm = () => {
             placeholder="Last Name"
             required
             onChange={handleChange}
-            value={employeeData.lastName}
+            value={employeeData && employeeData.lastName}
           />
         </div>
         <div className="flex gap-2">
@@ -44,7 +44,7 @@ const UpdateForm = () => {
             type="date"
             required
             onChange={handleChange}
-            value={employeeData.dateOfBirth}
+            value={employeeData && employeeData.dateOfBirth}
           />
           <input
             className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
@@ -53,7 +53,7 @@ const UpdateForm = () => {
             placeholder="Nationality"
             required
             onChange={handleChange}
-            value={employeeData.nationality}
+            value={employeeData && employeeData.nationality}
           />
         </div>
         <div className="flex items-center gap-2">
@@ -74,7 +74,7 @@ const UpdateForm = () => {
             placeholder="Street"
             required
             onChange={handleChange}
-            value={employeeData.addressStreet}
+            value={employeeData && employeeData.addressStreet}
           />
           <input
             className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
@@ -83,7 +83,7 @@ const UpdateForm = () => {
             placeholder="City"
             required
             onChange={handleChange}
-            value={employeeData.addressCity}
+            value={employeeData && employeeData.addressCity}
           />
         </div>
         <div className="flex gap-2">
@@ -94,7 +94,7 @@ const UpdateForm = () => {
             placeholder="State"
             required
             onChange={handleChange}
-            value={employeeData.addressState}
+            value={employeeData && employeeData.addressState}
           />
           <input
             className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
@@ -103,7 +103,7 @@ const UpdateForm = () => {
             placeholder="Postal Code"
             required
             onChange={handleChange}
-            value={employeeData.addressPostalCode}
+            value={employeeData && employeeData.addressPostalCode}
           />
         </div>
         <div className="flex gap-2">
@@ -114,7 +114,7 @@ const UpdateForm = () => {
             placeholder="Contact Number"
             required
             onChange={handleChange}
-            value={employeeData.contactNumber}
+            value={employeeData && employeeData.contactNumber}
           />
           <input
             className="w-full px-2 py-2 outline-none border-slate-500 border-2 rounded-sm"
@@ -123,7 +123,7 @@ const UpdateForm = () => {
             placeholder="Department"
             required
             onChange={handleChange}
-            value={employeeData.department}
+            value={employeeData && employeeData.department}
           />
         </div>
         <input
@@ -133,7 +133,7 @@ const UpdateForm = () => {
           placeholder="Position"
           required
           onChange={handleChange}
-          value={employeeData.position}
+          value={employeeData && employeeData.position}
         />
       </div>
       <button className="bg-green-700 hover:bg-green-600 transition-all duration-200 text-slate-100 py-2 rounded-lg text-xl mt-2">

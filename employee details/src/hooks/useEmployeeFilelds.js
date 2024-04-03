@@ -2,9 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleShowForm } from "../utils/slices/appSlice";
 import { useState } from "react";
 import { BACKEND_URL } from "../utils/constant";
+import useEmployeeDetails from "./useEmployeeDetails";
 
 const useEmployeeFields = (gender) => {
     const [employee, setEmployee] = useState([]);
+    const { fetchEmployeeDetails } = useEmployeeDetails()
     const dispatch = useDispatch();
     const showForm = useSelector((store) => store.app.showForm);
     const updateForm = useSelector((store) => store.app.updateForm);
@@ -26,11 +28,11 @@ const useEmployeeFields = (gender) => {
             },
             body: JSON.stringify({ ...employee, ["gender"]: gender.current.value }),
         })
-            .then((res) => console.log(res))
+            .then(() => fetchEmployeeDetails())
             .catch((err) => console.log(err));
         handleCloseForm();
         e.target.reset()
-        window.location.reload()
+        // window.location.reload()
     };
 
     const handleOnchange = (e) => {

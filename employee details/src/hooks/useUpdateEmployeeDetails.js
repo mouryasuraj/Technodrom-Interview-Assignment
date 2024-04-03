@@ -50,11 +50,9 @@ const useUpdateEmployeeDetails = (updateGender) => {
                 ...employeeData, ['gender']: updateGender.current.value
             }),
         })
-            .then((res) => {
-                console.log("Data Updated Successfully " + res);
-                window.location.reload()
-                e.target.reset()
+            .then(() => {
                 dispatch(toggleShowForm())
+                window.location.reload()
             })
             .catch((err) => console.log(err));
     };

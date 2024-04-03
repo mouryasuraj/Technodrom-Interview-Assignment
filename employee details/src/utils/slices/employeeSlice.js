@@ -22,9 +22,13 @@ const employeeSlice = createSlice({
             state.filteredEmployee = state.employeeDetails.filter((employee) => {
                 return employee.employeeId === action.payload
             })
+        },
+        emptyFilteredEmployee: (state) => {
+            state.filteredEmployee = null
         }
+
     }
 })
 
-export const { addEmployeeDetails, addNewEmployee, deleteEmployee, addFilteredEmployee } = employeeSlice.actions
+export const { addEmployeeDetails, addNewEmployee, deleteEmployee, addFilteredEmployee, emptyFilteredEmployee } = employeeSlice.actions
 export default employeeSlice.reducer
